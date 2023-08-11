@@ -40,10 +40,11 @@ body {
 	font-size: 18px;
 	padding: 8px 10px 8px 8px;
 	outline: none;
-	background-color: lightpink;
+	background: linear-gradient(to top,  #33a6cc 50%, #0099cc 50%);
+	color: white;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
-	border: 1px solid;
+	border: 1px solid black;
 	border-left: none;
 }
 .img {
