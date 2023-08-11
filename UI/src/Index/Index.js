@@ -33,7 +33,6 @@ function App() {
 				setWs(res.data.wind.speed);
 				setDi(res.data.wind.deg);
 				setGu(res.data.wind.gust);
-				console.log(res);
 			}).catch(()=>{
 				setCity("Location not found!");
 				setCnt("...");
