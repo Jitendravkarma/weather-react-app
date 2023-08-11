@@ -1,0 +1,82 @@
+*{
+	box-sizing: border-box;
+}
+body {
+	padding: 0;
+	margin: 0;
+	background: url("https://cdn.wallpapersafari.com/26/3/bSRVxY.jpg") no-repeat;
+	background-position: 0px;
+	background-size: cover;
+	font-family: arial;
+	color: white;
+	font-weight: bold;
+}
+.weather {
+	max-width: 400px;
+	margin: 20px auto;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	background:url("https://th.bing.com/th/id/OIP.P5PaqeUrtFXACrCghX1tIgHaNK?pid=ImgDet&rs=1") no-repeat;
+	background-size: cover;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),0px 0px 15px rgba(0, 0, 0, 0.6),0px 0px 20px rgba(0, 0, 0, 0.8);
+}
+.search {
+	padding: 10px 20px 10px 20px;
+}
+.search input[type=text]{
+	width: 70%;
+	margin: 0;
+	font-size: 18px;
+	padding: 8px 10px 8px 8px;
+	outline: none;
+	border: 1px solid;
+	border-right: none;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+.search input[type=button]{
+	margin: 0;
+	font-size: 18px;
+	padding: 8px 10px 8px 8px;
+	outline: none;
+	background-color: lightpink;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border: 1px solid;
+	border-left: none;
+}
+.img {
+	width: 100%;
+	height: 200px;
+	margin: auto;
+	padding: 10px;
+}
+.img img{
+	width: 50%;
+}
+.temp {
+	margin-bottom: 30px;
+}
+.previous {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.box{
+	flex-basis: 32%;
+	font-size: 13px;
+	border: 1px solid;
+	padding: 10px;
+}
+.box h3, .box h4 {
+	font-size: 14px;
+}
+@media (orientation:portrait){
+	body {
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
