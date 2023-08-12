@@ -10,6 +10,8 @@ function App() {
 	const [cnt, setCnt] = useState("...");
 	const [temp, setTemp] = useState("0");
 	const [time, setTime] = useState(date.toLocaleTimeString());
+	const [link, setLink] = useState("");
+	const [place, setPlace] = useState("");
 	const [ws, setWs] = useState("0");
 	const [di, setDi] = useState("0");
 	const [gu, setGu] = useState("0");
@@ -23,14 +25,17 @@ function App() {
 	const showdata =()=> {
 		let apikey = "6c145ad58f7eb4d8dd184acead953325";
 		let apiurl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${search}&appid=${apikey}`;
+		let placeURL = `https://www.google.com/search?q=best places to visit in ${search}`;
 		if (search==='') {
 			alert("Please enter any location name!");
 		}
 		else {
 			axios.get(apiurl).then((res)=>{
 				setCity(res.data.name);
+				setPlace(res.data.name);
 				setCnt(res.data.sys.country);
 				setTemp(parseInt(res.data.main.temp));
+				setLink(placeURL);
 				setWeat(res.data.weather[0].main);
 				setTime(date.toLocaleTimeString());
 				setWs(res.data.wind.speed);
@@ -40,6 +45,7 @@ function App() {
 				setCity("Location not found!");
 				setCnt("...");
 				setTemp("0");
+				setPlace("");
 				setWeat("Cloudy");
 				setWs("0");
 				setDi("0");
@@ -109,6 +115,7 @@ function App() {
 				<h3 id="temp">{temp}°C</h3>
 				<h3 id="weat">{weat}</h3>
 				<h3>Time:- <span id="time">{time}</span></h3>
+				<a href={link} target="blank" id="place">The best places to visit in: - <span id="placecity">{place}</span></a>
 			</div>
 			<div className="previous">
 				<div className="box">

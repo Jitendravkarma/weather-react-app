@@ -28,12 +28,16 @@ body {
 	width: 70%;
 	margin: 0;
 	font-size: 18px;
-	padding: 8px 10px 8px 8px;
+	padding: 8px 10px 8px 35px;
 	outline: none;
 	border: 1px solid;
 	border-right: none;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
+	/*background-color: white;*/
+	background: white url("https://th.bing.com/th/id/R.2f03465fd1f1d262321bdf0181b6e933?rik=7BOMj3z74H7qsw&pid=ImgRaw&r=0") no-repeat;
+	background-size: 16px;
+	background-position: 10px 14px;
 }
 .search input[type=button]{
 	margin: 0;
@@ -59,6 +63,22 @@ body {
 .temp {
 	margin-bottom: 30px;
 }
+.temp a {
+	color: white;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: bolder;
+	
+}
+.temp a:hover {
+	color: orange;
+}
+/*.temp a span {
+	color: transparent;
+	background: url("https://th.bing.com/th/id/OIP.9YtAsanlFMBU3PoImltJpwHaFP?pid=ImgDet&rs=1")no-repeat;
+	background-size: 100% 100%;
+	-webkit-background-clip: text;
+}*/
 .previous {
 	width: 100%;
 	display: flex;
