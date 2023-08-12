@@ -1,14 +1,13 @@
 import './Index.css';
 import axios from 'axios';
 import { useState } from 'react';
-function App() {
-	// let time = new Date();
-	// document.getElementById('time').innerHTML =time.toLocaleTimeString();
+export default function App() {
 	const date = new Date();
 	const [search, setSearch] = useState("");
 	const [city, setCity] = useState("...");
 	const [cnt, setCnt] = useState("...");
 	const [temp, setTemp] = useState("0");
+	const [img, setImg] = useState("https://cdn3.iconfinder.com/data/icons/luchesa-vol-9/128/Weather-1024.png");
 	const [time, setTime] = useState(date.toLocaleTimeString());
 	const [link, setLink] = useState("");
 	const [place, setPlace] = useState("");
@@ -34,6 +33,7 @@ function App() {
 				setCity(res.data.name);
 				setPlace(res.data.name);
 				setCnt(res.data.sys.country);
+				setImg(`http://openweathermap.org/img/w/${res.data.weather[0].icon}.png`)
 				setTemp(parseInt(res.data.main.temp));
 				setLink(placeURL);
 				setWeat(res.data.weather[0].main);
@@ -109,7 +109,7 @@ function App() {
 				<input autoFocus type="text" onKeyUp={validate} id="txt" value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search city..."/><input type="button" value="Search" onClick={showdata}/>
 			</div>
 			<div className="img">
-				<img src="https://cdn3.iconfinder.com/data/icons/luchesa-vol-9/128/Weather-1024.png" id="img" alt="cloudy"/>
+				<img src={img} id="img" alt="icon"/>
 			</div>
 			<div className="temp">
 				<h3 id="temp">{temp}°C</h3>
@@ -135,5 +135,3 @@ function App() {
 	</div>
   );
 }
-
-export default App;
