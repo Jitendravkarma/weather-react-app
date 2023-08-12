@@ -4,10 +4,12 @@ import { useState } from 'react';
 function App() {
 	// let time = new Date();
 	// document.getElementById('time').innerHTML =time.toLocaleTimeString();
+	const date = new Date();
 	const [search, setSearch] = useState("");
 	const [city, setCity] = useState("...");
 	const [cnt, setCnt] = useState("...");
 	const [temp, setTemp] = useState("0");
+	const [time, setTime] = useState(date.toLocaleTimeString());
 	const [ws, setWs] = useState("0");
 	const [di, setDi] = useState("0");
 	const [gu, setGu] = useState("0");
@@ -30,6 +32,7 @@ function App() {
 				setCnt(res.data.sys.country);
 				setTemp(parseInt(res.data.main.temp));
 				setWeat(res.data.weather[0].main);
+				setTime(date.toLocaleTimeString());
 				setWs(res.data.wind.speed);
 				setDi(res.data.wind.deg);
 				setGu(res.data.wind.gust);
@@ -105,7 +108,7 @@ function App() {
 			<div className="temp">
 				<h3 id="temp">{temp}°C</h3>
 				<h3 id="weat">{weat}</h3>
-				<h3>Time:- <span id="time"></span></h3>
+				<h3>Time:- <span id="time">{time}</span></h3>
 			</div>
 			<div className="previous">
 				<div className="box">
