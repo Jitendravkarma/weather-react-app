@@ -44,6 +44,7 @@ export default function App() {
 			}).catch(()=>{
 				setCity("Location not found!");
 				setCnt("...");
+				setImg(`https://clipartcraft.com/images/thinking-clipart-transparent.png`);
 				setTemp("0");
 				setPlace("");
 				setWeat("Cloudy");
